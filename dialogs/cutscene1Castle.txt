@@ -1,0 +1,89 @@
+<cutscene1>
+__________________________________________________________________________________________
+Today is the big day, you're finally going to get your first quest; a huge deal for a young knight such as yourself.
+As you approach the gate you see the guard, an old man wearing armour that has begun to rust.
+"Greetings adventurer!" he says with a grin. "What brings you to the castle today?"
+question:
+choice: 1) Why do you need to know old man?
+choice: 2) I'm here to claim my first quest!
+
+__________________________________________________________________________________________
+<choice 1>
+His grin turns into a scowl.
+"Kids these days, no respect for their elders..." he says, shaking his head.
+"But to answer your question, I need to know because it's my job. I can't just let any adventurer off the street enter the     castle."
+choiceQuestion:
+choice: 1) I'm here to claim my first quest!
+
+__________________________________________________________________________________________
+</choice 1>
+<choice 1>
+"Oh I see! A scrappy young knight looking for adventure! I was just like you when I was younger..."
+"Well, you probably don't have time to talk to an old sod like me, you may enter the castle."
+</choice 1>
+<choice 2>
+"Oh I see! A scrappy young knight looking for adventure! I was just like you when I was younger..."
+"Well, you probably don't have time to talk to an old sod like me, you may enter the castle."
+__________________________________________________________________________________________
+</choice 2>
+
+You enter the castle and look around, it's exactly as you had always imagined!
+Everything is shiny and expensive looking, including the armour of the knights and guards.
+Ah, to be a palace guard or one of the King's knights...
+But, you have no time to fantasize about living in the palace now, you need to go get your quest!
+You approach the giant throne room doors, taking deep breathes in an attempt to calm your nerves.
+How do you open the doors?
+question:
+choice: 1) I open them fast to make my GRAND ENTERANCE, after all, first impressions are everything.
+choice: 2) I open them... normally?
+
+__________________________________________________________________________________________
+<choice 1>
+You pull open the doors as fast as you can and strike a pose as you enter.
+.
+.
+.
+Everyone looks at you like you're crazy.
+Everyone except for the King himself, who looks rather amused.
+"That was quite the enterance young knight." He says,
+"I assume you're here to receive a quest?"
+You nod confidently.
+__________________________________________________________________________________________
+</choice 1>
+<choice 2>
+You pull open the doors the way any normal person opens any normal doors.
+As you enter, the guards pay you the normal amount of attention and the King regards you in much the same way as you would     think he would regard any young knight.
+"Greetings young knight." the King says.
+"I assume you're here to receive a quest?"
+You nod.
+__________________________________________________________________________________________
+</choice 2>
+
+"Then come forward, young knight, and claim it."
+You approach the throne slowly and kneel before your king.
+"Sir Reinhold," The King says, turning to address one of his knights.
+"Yes m'lord?" The knight, Sir Reinhold, says stepping forward
+Bring one of the quest scrolls to our young friend here." The King commanded.
+"Yes m'lord." The knight said before going to a golden basket decorated with brown jewels labeled 'beginners quests'.
+The basket was the first in a long row of baskets, all decorated similarly, but with different labels and jewel colors
+The knight brought the scroll to the King, who broke its seal and opened it to read out for the room to hear.
+__________________________________________________________________________________________
+
+As the Kings eyes moved accross the scroll they widened, then darted up from the scroll to look at you.
+"Young knight, this quest is a very serious one that I fear may have been put into the wrong basket, however, because I have   opened it for you there is not going back."
+"As you may know, some time ago my daughter was taken from us." 
+"Your quest is to travel to Hades and retrieve her."
+"Please go with Sir Reinhold, he will tell you more about how to complete your quest."
+__________________________________________________________________________________________
+
+You follow Sir Reinhold out of the throne room.
+He leads you down a coridor and through an archway out into a large courtyard.
+As you approach you can hear the clanging of metal against metal as well as shouts and grunts.
+"This is the training yard." Sir Reinhold says,
+"I'm sure you know the basics of fighting, but I want to be sure you'll be able to handle the types of monsters you'll face on such an important quest.
+The courtyard is filled with knights sparing against each other on rectangular patches of dirt and squires testing their   skills against straw dummys.
+Sir Reinhold leads you to one of the dirt patches. 
+On the way he grabs two practice sword off of a rack.
+When you get to the patch he goes to the far end and tosses you one of the swords.
+He gets into a fighting stance.
+</cutscene1>

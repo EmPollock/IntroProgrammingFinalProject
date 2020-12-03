@@ -1,0 +1,34 @@
+<stats>
+atk: 3 
+def: 3
+hp: 10
+</stats>
+
+<dialog>
+"Are you ready?"
+Before you can answer, Sir Reinhold strikes at you with his sword!
+__________________________________________________________________________________________
+
+</dialog>
+
+<strike>
+Sir Reinhold strikes at you again!
+<success>
+He knocks you back.
+</success>
+<fail>
+You dodge his attack!
+</fail>
+</strike>
+
+<defense>
+Sir Reinhold braces to block your strike
+</defense>
+
+<eDefeat>
+"Not bad for a rookie."
+</eDefeat>
+
+<eWin>
+You fall back and hit the dirt. "Not good enough, you'll have to do better than that before you go on that quest."
+</eWin>
