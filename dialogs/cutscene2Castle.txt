@@ -1,0 +1,33 @@
+<cutscene2>
+Sir Reinhold takes the practice sword from you and returns both of the practice swords to the rack.
+"It seems I may have underestimated your abilities. It appears there is a chance that you won't just be monster bait."
+"Guess that means I need to show you this." He says, taking a rolled up sheet of parchment out of his belt and handing it to     you.
+Upon unrolling it you see that it's a map.
+"To save the princess you must go from here, the castle, to Typhon's forest."
+"In the forest you will find the enterance to a large cave, in which resides the enterance to Hades."
+"Now, let's go to the armoury and get you some better gear."
+__________________________________________________________________________________________
+
+You traverse several more corridors with Sir Reinhold as your guide, then finally you reach a metal door with four guards,       two on each side.
+"State your buisness Sir Reinhold." Says the first guard on the right as you approach.
+"I am here to get better gear for this young knight better gear." He replies.
+"What is their quest?" the first guard on the left asks.
+"To save the princess." 
+The guards' stoney faces fill with shock for a second, before quickly going back to the expressionless state they've been        trained to keep.
+"You may proceed." The first guard says, unlocking and opening the heavy door for you to enter.
+__________________________________________________________________________________________
+
+As soon as the two of you are inside the room the door shuts behind you.
+Sir Reinhold immediately starts looking over and picking up pieces of gear and mubbling to himself about their inadequacies.
+Eventually he settles upon some leather armour and a fairly basic sword.
+"It's important that your armour and sword be light because you're traveling quite a distance and you won't be able to           bring a horse."
+He helps you put on the armour and gives you the sword's sheath belt to buckle around your own waist.
++ 3 attack
++ 3 defense
+__________________________________________________________________________________________
+
+After successfully preparing you for your quest, Sir Reinhold leads you out of the castle.
+"You're on your own now young knight." Sir Reinhold says before turning around to walk back into the castle.
+"Follow that map and you'll get there, assuming you don't get killed."
+And with that very encouraging fairwell, you set out into the forest.
+</cutscene2>

@@ -1,5 +1,6 @@
 <cutscene1>
 __________________________________________________________________________________________
+
 Today is the big day, you're finally going to get your first quest; a huge deal for a young knight such as yourself.
 As you approach the gate you see the guard, an old man wearing armour that has begun to rust.
 "Greetings adventurer!" he says with a grin. "What brings you to the castle today?"
