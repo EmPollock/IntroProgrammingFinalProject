@@ -3,17 +3,15 @@ from helpers import getNum
 import os
 import random as rand
 
-textPauseLen = 3
-printBreak = "_"*90
-
 def printStartMenu():
-    print("_"*90 + "\n")
+    printBreak = "_"*90
+    print(printBreak + "\n")
     print("1) Load existing save file")
     print("2) Create new save file")
     print("3) Delete a save file")
-    print("_"*90)
+    print(printBreak)
     choice = getNum("Enter your choice:", 1, 3, float("inf"), True)
-    print("_"*90)
+    print(printBreak)
     
     if choice == 1:
         saveFile = loadSaveFile()
@@ -31,27 +29,52 @@ def printStartMenu():
         printStartMenu()       
 
 def loadSaveFile():
+    printBreak = "_"*90
     while True:
         fileName = input("Enter the name of file your save file: ")   
+        fileName = fileName.lower()
         try:
             saveFile = open(fileName +".txt", "r")
-            return saveFile
+            return fileName
         except IOError:
             print("Could not find a save file named "+ fileName + ".")
             print("1) Try another name")
             print("2) Go back to start menu")
             choice = getNum("Enter your choice: ", 1, 2, float("inf"), True)
-            print("_"*90)
+            print(printBreak)
         if choice == 2:
             printStartMenu()
 
 def createSaveFile():
-    fileName = input("Enter a name for your save file: ")
+    printBreak = "_"*90
+    cutsceneTemplate = {"cutscene1":"incomplete", "cutscene2":"incomplete"}
+    encounterTemplate = {"encounter1":"incomplete"}
+    basePlayerStats = {"atk": 3, "def": 2, "hp": 15}
+    fileName = input("Enter a name for your save file: ") 
+    fileName = fileName.lower()   
     try:
         saveFile = open(fileName + ".txt", "r")
     except IOError:
-        saveFile = open(fileName + ".txt", "w")
-        print("Save file created." + "\n" + "_"*90)
+        with open(fileName+".txt", "w") as file:
+            file.write("<zone>\n")
+            file.write("castle\n")
+            file.write("</zone>\n")
+            file.write("<cutscenes>\n")
+            for key in cutsceneTemplate:
+                file.write(key+"\n")
+                file.write(cutsceneTemplate[key]+"\n")
+            file.write("</cutscenes>\n")
+            file.write("<encounters>\n")
+            for key in encounterTemplate:
+                file.write(key+"\n")
+                file.write(encounterTemplate[key]+"\n")
+            file.write("</encounters>\n")
+            file.write("<playerStats>\n")
+            file.write("atk: "+str(basePlayerStats["atk"])+"\n")
+            file.write("def: "+str(basePlayerStats["def"])+"\n")
+            file.write("hp: "+str(basePlayerStats["hp"])+"\n")
+            file.write("</playerStats>\n")
+        print("Save file created." + "\n" + printBreak)
         return
     else:
         print("A file by that named " + fileName + " already exists.")
@@ -59,7 +82,25 @@ def createSaveFile():
         print("1) Yes"+ " "*20 + "2) No")    
         choice = getNum("Enter your choice: ", 1, 2, float("inf"), True)
         if choice == 1:
-            saveFile = open(fileName + ".txt", "w")
+            with open(fileName+".txt", "w") as file:
+                file.write("<zone>\n")
+                file.write("castle\n")
+                file.write("</zone>\n")
+                file.write("<cutscenes>\n")
+                for key in cutsceneTemplate:
+                    file.write(key+"\n")
+                    file.write(cutsceneTemplate[key]+"\n")
+                file.write("</cutscenes>\n")
+                file.write("<encounters>\n")
+                for key in encounterTemplate:
+                    file.write(key+"\n")
+                    file.write(encounterTemplate[key]+"\n")
+                file.write("</encounters>\n")
+                file.write("<playerStats>\n")
+                file.write("atk: "+str(basePlayerStats["atk"])+"\n")
+                file.write("def: "+str(basePlayerStats["def"])+"\n")
+                file.write("hp: "+str(basePlayerStats["hp"])+"\n")
+                file.write("</playerStats>\n")
             print("Save file created." + "\n" + "_"*90)
         else:
             print("_"*90 + "\n Would you like to...")
@@ -75,7 +116,8 @@ def createSaveFile():
 
 def deleteSaveFile():
     while True:
-        fileName = input("Enter the name of the save file you want to delete: ")    
+        fileName = input("Enter the name of the save file you want to delete: ")  
+        fileName = fileName.lower()  
         if os.path.exists(fileName + ".txt"):
             os.remove(fileName + ".txt")
             return
@@ -122,6 +164,7 @@ def printTitleScreen():
     input("Press ENTER to continue...")
 
 def readDialog(fileName):
+    textPauseLen = 3
     onQuestion = False
     inChoice = False
     numOfChoices = 0
@@ -174,9 +217,87 @@ def readDialog(fileName):
                 print(line)
                 t.sleep(textPauseLen)
 
-#Add readSaveFile function
+def readSaveFile(fileName):
+    inZone = False
+    inCutscene = False
+    inEncounter = False
+    inPlayerStats = False
+    completedCutscenes = {}
+    completedEncounters = {}
+    playerStats = {}
+    fileName = fileName.lower()
+    with open(fileName+".txt", "r") as file:
+        for line in file:
+            line = line.strip()
+            if line == "<zone>":
+                inZone = True
+            elif line == "</zone>":
+                inZone = False
+            elif inZone == True:
+                zone = line
+            elif line == "<cutscenes>":
+                inCutscene = True
+                counter = 0
+            elif line == "</cutscenes>":
+                inCutscene = False
+            elif inCutscene == True:
+                if counter % 2 != 0:
+                    completedCutscenes[key] = line
+                else:                    
+                    key = line
+                counter += 1
+            elif line == "<encounters>":
+                inEncounter = True
+                counter = 0
+            elif line == "</encounters>":
+                inEncounter = False
+            elif inEncounter == True:
+                if counter % 2 != 0:
+                    completedEncounters[key] = line   
+                else:
+                    key = line
+                counter += 1
+            elif line == "<playerStats>":
+                inPlayerStats = True
+            elif line =="</playerStats>":
+                inPlayerStats = False
+            elif inPlayerStats == True:
+                if line[:4] == "atk:":
+                    playerStats["atk"] = int(line[5:])
+                elif line[:4] == "def:":
+                    playerStats["def"] = int(line[5:])
+                elif line[:3] == "hp:":
+                    playerStats["hp"] = int(line[4:])
+    return zone, completedCutscenes, completedEncounters, playerStats
 
-#Add saveProgress function
+def saveProgress(fileName, zone, completedCutscenes, completedEncounters, playerStats, autoSave):
+    printBreak = "_"*90
+    print(printBreak+"\n")
+    if autoSave == True:
+        print("Auto saving progress...")
+    else:
+        print("Saving progress...")
+    with open(fileName+".txt", "w") as file:
+        file.write("<zone>\n")
+        file.write(zone+"\n")
+        file.write("</zone>\n")
+        file.write("<cutscenes>\n")
+        for key in completedCutscenes:
+            file.write(key+"\n")
+            file.write(completedCutscenes[key]+"\n")
+        file.write("</cutscenes>\n")
+        file.write("<encounters>\n")
+        for key in completedEncounters:
+            file.write(key+"\n")
+            file.write(completedEncounters[key]+"\n")
+        file.write("</encounters>\n")
+        file.write("<playerStats>\n")
+        file.write("atk: "+str(playerStats["atk"])+"\n")
+        file.write("def: "+str(playerStats["def"])+"\n")
+        file.write("hp: "+str(playerStats["hp"])+"\n")
+        file.write("</playerStats>\n")
+    print("Finished saving.")    
+    print(printBreak+"\n")
 
 def readEncounter(fileName):
     enemyStats = {}
@@ -249,6 +370,7 @@ def readEncounter(fileName):
     return enemyStats, enemyDialog
 
 def fight(fileName, playerStats):
+    printBreak = "_"*90
     won = False
     fightPauseLen = 1
     atStart = True
@@ -258,12 +380,10 @@ def fight(fileName, playerStats):
     playerTempStats = {}
     enemyTempStats = {}
     turn = 1
-
     for key in playerStats:
         playerTempStats[key] = playerStats[key]
     for key in enemyStats:
         enemyTempStats[key] = enemyStats[key]
-    
     while won == False:
         if atStart == True:
             for line in enemyDialog["startDialog"]:
@@ -311,6 +431,7 @@ def fight(fileName, playerStats):
             t.sleep(fightPauseLen)
             print("You gained 1 health point")
             t.sleep(fightPauseLen)
+            print(printBreak+"\n")
             return playerStats
         else:
             if turn % 2 != 0:
@@ -386,19 +507,24 @@ def fight(fileName, playerStats):
                 turn += 1
 
 def main():        
-    playerStats = {"atk": 4, "def": 2, "hp": 15}
-    zone = "castle"
-    completedCutscenes = {"cutscene1":"incomplete", "cutscene2":"incomplete"}
-    completedEncounters = {"encounter1":"incomplete"}
-    
     printTitleScreen()
     saveFile = printStartMenu()
+    zone, completedCutscenes, completedEncounters, playerStats = readSaveFile(saveFile)
     if zone == "castle":
         if completedCutscenes["cutscene1"] == "incomplete":
             readDialog("dialogs/cutscene1Castle.txt")
             completedCutscenes["cutscene1"] = "complete"
-        if completedCutscenes["cutscene1"] == "complete" and completedEncounters["encounter1"] == "incomplete":
-            playerStats = fight("castleEncounter.txt", playerStats)
+            saveProgress(saveFile, zone, completedCutscenes, completedEncounters, playerStats, True)
+        if completedEncounters["encounter1"] == "incomplete":
+            playerStats = fight("encounter1Castle.txt", playerStats)
             completedEncounters["encounter1"] = "complete"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+        if completedCutscenes["cutscene2"] == "incomplete":
+            readDialog("dialogs/cutscene2Castle.txt")
+            playerStats["atk"] += 3
+            playerStats["def"] += 3
+            completedCutscenes["cutscene2"] = "complete"            
+            zone = "forest"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
 
 main()
