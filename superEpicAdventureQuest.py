@@ -47,8 +47,14 @@ def loadSaveFile():
 
 def createSaveFile():
     printBreak = "_"*90
-    cutsceneTemplate = {"cutscene1":"incomplete", "cutscene2":"incomplete"}
-    encounterTemplate = {"encounter1":"incomplete"}
+    cutsceneTemplate = {"cutscene1":"incomplete", 
+                        "cutscene2":"incomplete", 
+                        "cutscene3":"incomplete", 
+                        "cutscene4":"incomplete", 
+                        "cutscene5":"incomplete"}
+    encounterTemplate = {"encounter1":"incomplete", 
+                         "encounter2":"incomplete", 
+                         "encounter3":"incomplete"}
     basePlayerStats = {"atk": 3, "def": 2, "hp": 15}
     fileName = input("Enter a name for your save file: ") 
     fileName = fileName.lower()   
@@ -310,7 +316,7 @@ def readEncounter(fileName):
     inDefeat = False
     inWin = False
     enemyDialog = {"startDialog": [],"strike":{}, "defend":{}}
-    with open("encounters/castleEncounter.txt", "r") as file:
+    with open(fileName, "r") as file:
         for line in file:
             line = line.strip()
             if line == "<stats>":
@@ -412,6 +418,7 @@ def fight(fileName, playerStats):
 
         if playerTempStats["hp"] <= 0:
             print(enemyDialog["win"])
+            input("Press Enter to retry: ")
             for key in playerStats:
                 playerTempStats[key] = playerStats[key]
             for key in enemyStats:
@@ -431,7 +438,6 @@ def fight(fileName, playerStats):
             t.sleep(fightPauseLen)
             print("You gained 1 health point")
             t.sleep(fightPauseLen)
-            print(printBreak+"\n")
             return playerStats
         else:
             if turn % 2 != 0:
@@ -525,6 +531,20 @@ def main():
             playerStats["def"] += 3
             completedCutscenes["cutscene2"] = "complete"            
             zone = "forest"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+    if zone == "forest":
+        if completedCutscenes["cutscene3"] == "incomplete":
+            readDialog("dialogs/cutscene3Forest.txt")
+            completedCutscenes["cutscene3"] = "complete"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+        if completedEncounters["encounter2"] == "incomplete":
+            fight("encounters/encounter2Forest.txt", playerStats)
+            completedEncounters["encounter2"] = "complete"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+        if completedCutscenes["cutscene4"] == "incomplete":
+            readDialog("dialogs/cutscene4Forest.txt")
+            completedCutscenes["cutscene4"] = "complete"
+            zone = "cave"
             saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
 
 main()
