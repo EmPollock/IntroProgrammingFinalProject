@@ -6,6 +6,7 @@ hp: 25
 
 <dialog>
 The basilisk sways back and forth, hissing at you.
+It lunges forward to bite you!
 </dialog>
 
 <strike>

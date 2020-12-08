@@ -571,7 +571,7 @@ def main():
             completedEncounters["encounter3"] = "complete"
             saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
         if completedCutscenes["cutscene6"] == "incomplete":
-            readDialog("dialog/cutscene6Cave.txt")
+            readDialog("dialogs/cutscene6Cave.txt")
             completedCutscenes["cutscene6"] = "complete"
             zone = "hades"
             saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
