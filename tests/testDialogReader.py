@@ -4,14 +4,12 @@ onQuestion = False
 inChoice = False
 numOfChoices = 0
 choice = 0
-textPauseLen = 1
-cutscene1 = "incomplete"
-cutscene2 = "incomplete"
+textPauseLen = 3
 
-with open("dialogs/castleDialog.txt", "r") as file:
+with open("dialogs/cutscene4Forest.txt", "r") as file:
     for line in file:
         line = line.strip()
-        if line == "<cutscene1>" or line == "<cutscene2>":
+        if line[:9] == "<cutscene":
             print()
         elif line == "question:":
             onQuestion = True
@@ -50,16 +48,9 @@ with open("dialogs/castleDialog.txt", "r") as file:
                 t.sleep(textPauseLen)
         elif line == "_"*90 or line == "":
             print(line)
-        elif line == "</cutscene1>":
-            cutscene1 = "complete"
-        elif line == "</cutscene2>":
-            cutscene2 = "complete"
+        elif line[:10] == "</cutscene":
+            print("")
         else:
             print(line)
             t.sleep(textPauseLen)
         
-        
-
-
-
-

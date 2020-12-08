@@ -2,7 +2,7 @@ from helpers import getNum
 import random as rand
 import time as t
 
-playerStats = {"atk": 4, "def": 2, "hp": 15}
+playerStats = {"atk": 7, "def": 6, "hp": 16}
 fightPauseLen = 1
 printBreak = "_"*90
 
@@ -17,7 +17,7 @@ def readEncounter(fileName):
     inDefeat = False
     inWin = False
     enemyDialog = {"startDialog": [],"strike":{}, "defend":{}}
-    with open("encounters/castleEncounter.txt", "r") as file:
+    with open(fileName, "r") as file:
         for line in file:
             line = line.strip()
             if line == "<stats>":
@@ -119,6 +119,7 @@ def fight(fileName, playerStats):
 
         if playerTempStats["hp"] <= 0:
             print(enemyDialog["win"])
+            input("Press Enter to retry: ")
             for key in playerStats:
                 playerTempStats[key] = playerStats[key]
             for key in enemyStats:
@@ -213,5 +214,5 @@ def fight(fileName, playerStats):
                 turn += 1
 
 
-fight("encounters/castleEncounter.txt", playerStats)
+fight("encounters/encounter2Forest.txt", playerStats)
 print(playerStats)
