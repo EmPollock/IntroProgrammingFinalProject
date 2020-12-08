@@ -52,10 +52,13 @@ def createSaveFile():
                         "cutscene3":"incomplete", 
                         "cutscene4":"incomplete", 
                         "cutscene5":"incomplete",
-                        "cutscene6":"incomplete"}
+                        "cutscene6":"incomplete",
+                        "cutscene7":"incomplete",
+                        "cutscene8":"incompelte"}
     encounterTemplate = {"encounter1":"incomplete", 
                          "encounter2":"incomplete", 
-                         "encounter3":"incomplete"}
+                         "encounter3":"incomplete",
+                         "encounter4":"incomplete"}
     basePlayerStats = {"atk": 3, "def": 2, "hp": 15}
     fileName = input("Enter a name for your save file: ") 
     fileName = fileName.lower()   
@@ -575,4 +578,21 @@ def main():
             completedCutscenes["cutscene6"] = "complete"
             zone = "hades"
             saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+    if zone == "hades":
+        if completedCutscenes["cutscene7"] == "incomplete":
+            readDialog("dialogs/cutscene7Hades.txt")
+            completedCutscenes["cutscene7"] = "complete"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+        if completedEncounters["encounter4"] == "incomplete":
+            fight("encounters/encounter4Hades.txt", playerStats)
+            completedEncounters["encounter4"] = "complete"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+        if completedCutscenes["cutscene8"] == "incomplete":
+            readDialog("dialogs/cutscene8Hades.txt")
+            completedCutscenes["cutscene8"] = "complete"
+            zone = "completed"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+    elif zone == "completed":
+        print("You have already completed the game on this file. To play again, please make a new file or overwrite this one.")
+        
 main()
