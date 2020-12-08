@@ -51,7 +51,8 @@ def createSaveFile():
                         "cutscene2":"incomplete", 
                         "cutscene3":"incomplete", 
                         "cutscene4":"incomplete", 
-                        "cutscene5":"incomplete"}
+                        "cutscene5":"incomplete",
+                        "cutscene6":"incomplete"}
     encounterTemplate = {"encounter1":"incomplete", 
                          "encounter2":"incomplete", 
                          "encounter3":"incomplete"}
@@ -376,9 +377,9 @@ def readEncounter(fileName):
     return enemyStats, enemyDialog
 
 def fight(fileName, playerStats):
+    fightPauseLen = 1
     printBreak = "_"*90
     won = False
-    fightPauseLen = 1
     atStart = True
     enemyDefending = False
     playerDefending = False
@@ -386,10 +387,12 @@ def fight(fileName, playerStats):
     playerTempStats = {}
     enemyTempStats = {}
     turn = 1
+
     for key in playerStats:
         playerTempStats[key] = playerStats[key]
     for key in enemyStats:
         enemyTempStats[key] = enemyStats[key]
+    
     while won == False:
         if atStart == True:
             for line in enemyDialog["startDialog"]:
@@ -465,11 +468,17 @@ def fight(fileName, playerStats):
                             print("-"+ str(playerTempStats["atk"]))
                             t.sleep(fightPauseLen)
                         else:
-                            enemyTempStats["hp"] -= (playerTempStats["atk"]-enemyTempStats["def"])
-                            print("They were defending!")
-                            t.sleep(fightPauseLen)
-                            print("-"+str(playerTempStats["atk"]-enemyTempStats["def"]))
-                            t.sleep(fightPauseLen)
+                            if playerTempStats["atk"]-enemyTempStats["def"] > 0:
+                                enemyTempStats["hp"] -= (playerTempStats["atk"]-enemyTempStats["def"])
+                                print("They were defending!")
+                                t.sleep(fightPauseLen)
+                                print("-"+str(playerTempStats["atk"]-enemyTempStats["def"]))
+                                t.sleep(fightPauseLen)
+                            else:
+                                print("They were defending!")
+                                t.sleep(fightPauseLen)
+                                print("-0")
+                                t.sleep(fightPauseLen)
                     else:
                         print("You missed.")
                         t.sleep(fightPauseLen)
@@ -483,11 +492,11 @@ def fight(fileName, playerStats):
                 #enemy turn
                 print(printBreak +"\n")
                 choice = rand.randint(1, 100)
-                if choice <= 75:
+                if choice <= 65:
                     print(enemyDialog["attemptStrike"])
                     t.sleep(fightPauseLen)
                     hitOrMiss = rand.randint(1,100)
-                    if hitOrMiss <= 75:
+                    if hitOrMiss <= 65:
                         print(enemyDialog["strike"]["success"])
                         t.sleep(fightPauseLen)
                         if playerDefending == False:
@@ -497,15 +506,21 @@ def fight(fileName, playerStats):
                             print("-"+ str(enemyTempStats["atk"]))
                             t.sleep(fightPauseLen)
                         else:
-                            playerTempStats["hp"] -= (enemyTempStats["atk"]-playerTempStats["def"])
-                            print("You were defending!")
-                            t.sleep(fightPauseLen)
-                            print("-"+str(enemyTempStats["atk"]-playerTempStats["def"]))
-                            t.sleep(fightPauseLen)
+                            if enemyTempStats["atk"]-playerTempStats["def"] > 0:
+                                playerTempStats["hp"] -= (enemyTempStats["atk"]-playerTempStats["def"])
+                                print("You were defending!")
+                                t.sleep(fightPauseLen)
+                                print("-"+str(enemyTempStats["atk"]-playerTempStats["def"]))
+                                t.sleep(fightPauseLen)
+                            else:
+                                print("You were defending!")
+                                t.sleep(fightPauseLen)
+                                print("-0")
+                                t.sleep(fightPauseLen)
                     else:
                         print(enemyDialog["strike"]["fail"])
                         t.sleep(fightPauseLen)
-                if choice > 75:
+                if choice > 65:
                     print(enemyDialog["defense"])
                     t.sleep(fightPauseLen)
                     enemyDefending = True
@@ -546,5 +561,18 @@ def main():
             completedCutscenes["cutscene4"] = "complete"
             zone = "cave"
             saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
-
+    if zone == "cave":
+        if completedCutscenes["cutscene5"] == "incomplete":
+            readDialog("dialogs/cutscene5Cave.txt")
+            completedCutscenes["cutscene5"] = "complete"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+        if completedEncounters["encounter3"] == "incomplete":
+            fight("encounters/encounter3Cave.txt", playerStats)
+            completedEncounters["encounter3"] = "complete"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
+        if completedCutscenes["cutscene6"] == "incomplete":
+            readDialog("dialog/cutscene6Cave.txt")
+            completedCutscenes["cutscene6"] = "complete"
+            zone = "hades"
+            saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
 main()
