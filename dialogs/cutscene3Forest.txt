@@ -1,0 +1,53 @@
+<cutscene3>
+At first, your journey is fairly uneventful.
+You walk along the dirt path, checking the map every so often to make sure you're still on course.
+After walking for several hours you notice that the sun is going down and it's getting dark fast. 
+Do you:
+question:
+choice: 1) Keep walking. You want to get to the cave as soon as possible.
+choice: 2) Find a clearing near the path and set up camp for the night. Darkness means more danger, besides, you could use some rest.
+__________________________________________________________________________________________
+<choice 1>
+
+You continue walking down the path.
+By now it's dark and you think you might hear something in the forest.
+You shake it off, thinking it's probably your imagination. 
+You are very tired, afterall.
+__________________________________________________________________________________________
+
+After some more walking you hear the sound again, but louder.
+It sounds a bit like the sound of many branches striking the ground in quick succession.
+You debate whether or not to search for the source of the noises when you see a faint glow in the direction the sound is       coming from.
+The glow rapidly approaches you and you start to see what it is.
+It's a giant insect, about as tall as you are, with big red glowing patches near its mouth and giant pinsers; A giant fire      beetle.
+The beetle spots you at the same time you spot it and charges towards you.
+__________________________________________________________________________________________
+
+</choice 1>
+<choice 2>
+
+You find a clearing fairly close to the path.
+You take off your armour and set out your bed roll.
+You decide not to make a fire, it's summer so you don't need the extra warmth, and light can attract some creatures you'd       rather not deal with.
+You fall asleep more easily than you would expect for sleeping on a thin mat on the hard ground.
+__________________________________________________________________________________________
+
+You slowly wake up and notice it's still night.
+You were awoken by a faint sound in the forest.
+You decide to go back to sleep, but your uneasiness makes it much harder than the last time you tried to fall asleep.
+__________________________________________________________________________________________
+
+The sound continues throughout your restlessness.
+You can make it out better now, but it is still an unfamilliar sound.
+It sounds a bit like the sound of many branches striking the ground in quick succession.
+Because the noise apears to be getting louder you decide to get up and investigate it.
+You look into the forest in the direction of the sound and see a faint glow.
+You quickly put on your armour.
+As you finish strapping on the last piece you finally get a good look at the glowing thing that has been rapidly approaching.
+It's a giant insect, about as tall as you are, with big red glowing patches near its mouth and giant pinsers; A giant fire      beetle.
+By now it's very close to your camp.
+It spots you and charges at you.
+__________________________________________________________________________________________
+
+</choice 2>
+</cutscene3>

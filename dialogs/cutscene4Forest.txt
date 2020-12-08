@@ -1,0 +1,11 @@
+<cutscene4>
+You decide to travel along the path a little ways further in case the beetle decides to come back.
+You set up camp in a new clearing and fall asleep.
+__________________________________________________________________________________________
+
+You wake up to the sun coming through the branches above you.
+You pack up your stuff and go back to the path.
+After walking the path for a few more hours you see a large cave enterance.
+If your map is correct this should be the cave you're looking for.
+You enter the cave.
+</cutscene4>

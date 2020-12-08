@@ -1,0 +1,31 @@
+<stats>
+atk: 4
+def: 7
+hp: 17
+</stats>
+
+<dialog>
+The beetle snaps its giant pinsers and clicks angrily.
+</dialog>
+
+<strike>
+The beetle tries to bite you with its pinsers.
+<success>
+It successfully bite you!
+</success>
+<fail>
+It misses!
+</fail>
+</strike>
+
+<defense>
+The beetle braces itself, anticipating your next attack.
+</defense>
+
+<eDefeat>
+The beetle hisses and scuttles back into the woods.
+</eDefeat>
+
+<eWin>
+The beetle knocks you over and bites you. YOU DIED.
+</eWin>
