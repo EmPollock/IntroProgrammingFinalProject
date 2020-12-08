@@ -12,7 +12,7 @@ It lunges forward to bite you!
 <strike>
 The basilisk lunges forward to bite you!
 <success>
-It succeedes!
+It succeeds!
 </success>
 <fail>
 It misses!

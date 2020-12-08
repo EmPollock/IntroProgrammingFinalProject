@@ -20,13 +20,11 @@ def printStartMenu():
     if choice == 2:
         createSaveFile()
         print("File created")
-        input("Press Enter to continue...")
-        printStartMenu()       
+        exit()     
     if choice == 3:
         deleteSaveFile()
         print("File deleted")
-        input("Press Enter to continue...")
-        printStartMenu()       
+        exit()  
 
 def loadSaveFile():
     printBreak = "_"*90
@@ -54,7 +52,7 @@ def createSaveFile():
                         "cutscene5":"incomplete",
                         "cutscene6":"incomplete",
                         "cutscene7":"incomplete",
-                        "cutscene8":"incompelte"}
+                        "cutscene8":"incomplete"}
     encounterTemplate = {"encounter1":"incomplete", 
                          "encounter2":"incomplete", 
                          "encounter3":"incomplete",
@@ -540,7 +538,7 @@ def main():
             completedCutscenes["cutscene1"] = "complete"
             saveProgress(saveFile, zone, completedCutscenes, completedEncounters, playerStats, True)
         if completedEncounters["encounter1"] == "incomplete":
-            playerStats = fight("encounter1Castle.txt", playerStats)
+            playerStats = fight("encounters/encounter1Castle.txt", playerStats)
             completedEncounters["encounter1"] = "complete"
             saveProgress(saveFile,zone,completedCutscenes,completedEncounters, playerStats, True)
         if completedCutscenes["cutscene2"] == "incomplete":

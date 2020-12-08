@@ -11,7 +11,7 @@ The beetle snaps its giant pinsers and clicks angrily.
 <strike>
 The beetle tries to bite you with its pinsers.
 <success>
-It successfully bite you!
+It successfully bites you!
 </success>
 <fail>
 It misses!

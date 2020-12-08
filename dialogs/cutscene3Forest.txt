@@ -10,13 +10,12 @@ ________________________________________________________________________________
 <choice 1>
 
 You continue walking down the path.
-You hear a soft clink and feel something small fall out of your and hit your leg before bouncing onto the ground.
+You hear a soft clink and feel something small fall out of your armour and hit your leg before bouncing onto the ground.
 You look on the ground, and in the little light that is still left you see a gold coin.
 Sir Reinhold must have put it there, though why you're not sure.
 You pick it up and study it.
 It's not like the kingdoms coins that you're used to, it seems much... older.
-You put the coin in your pocket.
-You keep walking.
+You put the coin in your pocket and continue walking.
 By now it's dark and you think you might hear something in the forest.
 You shake it off, thinking it's probably your imagination. 
 You are very tired, afterall.
@@ -25,7 +24,7 @@ ________________________________________________________________________________
 After some more walking you hear the sound again, but louder.
 It sounds a bit like the sound of many branches striking the ground in quick succession.
 You debate whether or not to search for the source of the noises when you see a faint glow in the direction the sound is       coming from.
-The glow rapidly approaches you and you start to see what it is.
+The glow rapidly approaches you and you can start to see what it is.
 It's a giant insect, about as tall as you are, with big red glowing patches near its mouth and giant pinsers; A giant fire      beetle.
 The beetle spots you at the same time you spot it and charges towards you.
 __________________________________________________________________________________________
