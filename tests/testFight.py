@@ -3,8 +3,7 @@ import random as rand
 import time as t
 
 playerStats = {"atk": 7, "def": 6, "hp": 16}
-fightPauseLen = 1
-printBreak = "_"*90
+
 
 def readEncounter(fileName):
     enemyStats = {}
@@ -85,7 +84,8 @@ def fight(fileName, playerStats):
     playerTempStats = {}
     enemyTempStats = {}
     turn = 1
-
+    fightPauseLen = 1
+    printBreak = "_"*90
     for key in playerStats:
         playerTempStats[key] = playerStats[key]
     for key in enemyStats:
@@ -166,11 +166,17 @@ def fight(fileName, playerStats):
                             print("-"+ str(playerTempStats["atk"]))
                             t.sleep(fightPauseLen)
                         else:
-                            enemyTempStats["hp"] -= (playerTempStats["atk"]-enemyTempStats["def"])
-                            print("They were defending!")
-                            t.sleep(fightPauseLen)
-                            print("-"+str(playerTempStats["atk"]-enemyTempStats["def"]))
-                            t.sleep(fightPauseLen)
+                            if playerTempStats["atk"]-enemyTempStats["def"] > 0:
+                                enemyTempStats["hp"] -= (playerTempStats["atk"]-enemyTempStats["def"])
+                                print("They were defending!")
+                                t.sleep(fightPauseLen)
+                                print("-"+str(playerTempStats["atk"]-enemyTempStats["def"]))
+                                t.sleep(fightPauseLen)
+                            else:
+                                print("They were defending!")
+                                t.sleep(fightPauseLen)
+                                print("-0")
+                                t.sleep(fightPauseLen)
                     else:
                         print("You missed.")
                         t.sleep(fightPauseLen)
@@ -184,11 +190,11 @@ def fight(fileName, playerStats):
                 #enemy turn
                 print(printBreak +"\n")
                 choice = rand.randint(1, 100)
-                if choice <= 75:
+                if choice <= 65:
                     print(enemyDialog["attemptStrike"])
                     t.sleep(fightPauseLen)
                     hitOrMiss = rand.randint(1,100)
-                    if hitOrMiss <= 75:
+                    if hitOrMiss <= 65:
                         print(enemyDialog["strike"]["success"])
                         t.sleep(fightPauseLen)
                         if playerDefending == False:
@@ -198,15 +204,21 @@ def fight(fileName, playerStats):
                             print("-"+ str(enemyTempStats["atk"]))
                             t.sleep(fightPauseLen)
                         else:
-                            playerTempStats["hp"] -= (enemyTempStats["atk"]-playerTempStats["def"])
-                            print("You were defending!")
-                            t.sleep(fightPauseLen)
-                            print("-"+str(enemyTempStats["atk"]-playerTempStats["def"]))
-                            t.sleep(fightPauseLen)
+                            if enemyTempStats["atk"]-playerTempStats["def"] > 0:
+                                playerTempStats["hp"] -= (enemyTempStats["atk"]-playerTempStats["def"])
+                                print("You were defending!")
+                                t.sleep(fightPauseLen)
+                                print("-"+str(enemyTempStats["atk"]-playerTempStats["def"]))
+                                t.sleep(fightPauseLen)
+                            else:
+                                print("You were defending!")
+                                t.sleep(fightPauseLen)
+                                print("-0")
+                                t.sleep(fightPauseLen)
                     else:
                         print(enemyDialog["strike"]["fail"])
                         t.sleep(fightPauseLen)
-                if choice > 75:
+                if choice > 65:
                     print(enemyDialog["defense"])
                     t.sleep(fightPauseLen)
                     enemyDefending = True
@@ -214,5 +226,5 @@ def fight(fileName, playerStats):
                 turn += 1
 
 
-fight("encounters/encounter2Forest.txt", playerStats)
+fight("encounters/encounter3Cave.txt", playerStats)
 print(playerStats)
