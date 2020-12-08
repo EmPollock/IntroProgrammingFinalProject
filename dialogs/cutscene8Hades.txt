@@ -1,0 +1,30 @@
+<cutscene8>
+The gates are flung open and a young woman runs between you and Cerberus.
+"Don't kill him!" She says, panting and trying to catch her breathe.
+"He's a really good boy once you get to know him, he just doesn't like strangers or... swords."
+She turns around and inspects Cerberus' wounds, then she kneels down puts her hands on Cerberus and closes her eyes.
+Her hands start to glow and Cerberus' wounds start to heal. 
+After his wounds are all healed she stands up, and so does Cerberus.
+She scratches two of his chins and his tail starts to wag. 
+"Who are you?" You ask the strange woman.
+"I could ask you the same thing." She says, not bothering to look at you.
+"I am a knight, sent here by the King to find the princess and bring her back." You reply.
+"Ah, so your here looking for me. I was wondering when that might happen." She says, finally turning to look at you.
+"Sadly I cannot come with you. The lord of the underworld wasn't too happy about my healing powers so he wants me to stay       here so I can't prevent more deaths that were meant to happen."
+"Then, how am I supposed to finish my quest?"
+__________________________________________________________________________________________
+
+You and the princess go inside to talk to Hades.
+After some discussion you come to an agreement.
+The princess may return with you for now, but she must spend half of each year in the underworld, and she cannot use her        healing magic outside of the underworld.
+__________________________________________________________________________________________
+
+You and the princess return to her father's castle without much incident.
+When you get there you notice that there aren't nearly as many knights there this time as there had been last time.
+You see Sir Reinhold and decide to ask him about it.
+"They were all to scared to take quests when they knew your quest was in one of the baskets, but when they heard the quest      had been taken they all jumped on the opportunity and got new quests of their own."
+You bring the princess into the throne room.
+She has a very heartfelt reunion with her father and he offers you a postion as one of his knights, which you excitedly         accept.
+
+Congratulations you won!
+</cutscene8>

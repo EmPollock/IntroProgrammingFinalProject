@@ -10,6 +10,13 @@ ________________________________________________________________________________
 <choice 1>
 
 You continue walking down the path.
+You hear a soft clink and feel something small fall out of your and hit your leg before bouncing onto the ground.
+You look on the ground, and in the little light that is still left you see a gold coin.
+Sir Reinhold must have put it there, though why you're not sure.
+You pick it up and study it.
+It's not like the kingdoms coins that you're used to, it seems much... older.
+You put the coin in your pocket.
+You keep walking.
 By now it's dark and you think you might hear something in the forest.
 You shake it off, thinking it's probably your imagination. 
 You are very tired, afterall.
@@ -28,6 +35,12 @@ ________________________________________________________________________________
 
 You find a clearing fairly close to the path.
 You take off your armour and set out your bed roll.
+While you're taking off your armour, you feel something small fall and hit your leg before bouncing onto the ground.
+A gold coin.
+Sir Reinhold must have put it there, though why you're not sure.
+You pick it up and study it.
+It's not like the kingdoms coins that you're used to, it seems much... older.
+You put the coin in your pocket.
 You decide not to make a fire, it's summer so you don't need the extra warmth, and light can attract some creatures you'd       rather not deal with.
 You fall asleep more easily than you would expect for sleeping on a thin mat on the hard ground.
 __________________________________________________________________________________________

@@ -1,0 +1,47 @@
+<cutscene7>
+When you reach the bottom of the stairway, you find yourself in a firey landscape near the bank of a black river.
+On each side of the river there is a chared dock.
+Standing on the dock on the same side of the river as you is a man wearing a cloak, holding the rope of a small boat that's     floating in the water.
+You approach the man.
+"One golden drachma for passage." The man says holding out his hand.
+Do you:
+question:
+choice: 1) Ask "Who are you? And what's a drachma?"
+choice: 2) Give him the coin you found earlier.
+__________________________________________________________________________________________
+<choice 1>
+"My name is Charon, I bring the souls of the dead over the river Styx, for a price of course." He replies.
+"That price being a golden drachma, which you should have been buried with. If not you're out of luck."
+"Oh, you mean this?" You say pulling the coin you found earlier out of your pocket.
+"Yes, that. Now do you want to cross the river or not? I don't have all day."
+choiceQuestion:
+choice: 1) Give him the coin.
+
+</choice 1>
+<choice 1>
+
+You give him the coin and he helps you into the boat.
+</choice 1>
+<choice 2>
+
+You take the coin out of your pocket.
+"You mean this?" You ask, holding the coin out in your hand so he can see it."
+"Yes," He replies, taking the coin from your hand. "Now into the boat you go."
+He helps you into the boat.
+__________________________________________________________________________________________
+
+</choice 2>
+Charon expertly guides the boat accross the river and soon you're on the other side.
+As soon as you get out of the boat it disappears.
+You look back accross the river.
+Charon is somehow already back at the other dock with his boat ready to carry more passangers.
+You look back away from the river and notice a long winding path that goes through the barren burning land.
+You follow the trail for quite some time, off of the trail you can see many spirits undergoing strange punishments.
+Some of the more memorable include one who would push a giant bolder up a mountain, only for it to roll down the other side     and the whole process to repeat again,
+and another who was stuck on an island with a fruit tree in the middle of a pool of water, but everytime he went to reach for   the fruit or tried to take a drink of water, it would recoil away from him.
+You continue following the path as it winds over and around hills, past many spirits in torment, until you can finally see      the castle gates.
+Outside of the castle gates there is a large three headed dog with a large metal collar around each of its heads and  a        chain  for each keeping it near the gate.
+The collars all read 'Cerberus'.
+As you approach, one of the three heads notices you and starts growling, alerting the other two to your presence as well.
+You draw your sword to prepare for the fight.
+</cutscene7>

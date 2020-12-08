@@ -1,0 +1,31 @@
+<stats>
+atk: 5
+def: 6
+hp: 30
+</stats>
+
+<dialog>
+Cerburus snaps at you.
+</dialog>
+
+<strike>
+Cerburus snaps at you.
+<success>
+He successfully bites you.
+</success>
+<fail>
+He misses.
+</fail>
+</strike>
+
+<defense>
+Cerburus growls and braces for your next attack.
+</defense>
+
+<eWin>
+Cerburus tackles you, the last thing you see is the inside of one of his mouthes. YOU DIED.
+</eWin>
+
+<eDefeat>
+Cerburus falls onto his side. Your about to deal the final blow when you hear someone yell "STOP!"
+</eDefeat>
