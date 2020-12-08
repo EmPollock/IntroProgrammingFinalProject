@@ -1,0 +1,31 @@
+<stats>
+atk: 4
+def: 3
+hp: 25
+</stats>
+
+<dialog>
+The basilisk sways back and forth, hissing at you.
+</dialog>
+
+<strike>
+The basilisk lunges forward to bite you!
+<success>
+It succeedes!
+</success>
+<fail>
+It misses!
+</fail>
+</strike>
+
+<defense>
+The basilisk braces for your attack.
+</defense>
+
+<eWin>
+The basilisk wraps around you, constricting you. YOU PASS OUT.
+</eWin>
+
+<eDefeat>
+You have slane the basilisk!
+</eDefeat>

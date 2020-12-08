@@ -1,0 +1,6 @@
+<cutscene6>
+You climb over the basilisk's body and approach the door.
+The doors are huge, but the handles are at the perfect height.
+You pull open the doors to reveil a stairway that goes down so far you can't see where they end.
+You start your trek down the stairs.
+</cutscene6>

@@ -1,0 +1,58 @@
+<cutscene5>
+Upon entering the cave you notice it's full of hundereds of glowing crystals.
+They illuminated the walls, ceiling, and floors of the cave.
+The crystals grow from nearly every surface, but you begin to notice that there are certain parts of the cave floor where       they aren't growing.
+It seems almost like the path continues into the cave.
+You follow the path down into the cave.
+The further into the cave you go, the less crystals there are and the rougher the path becomes.
+Soon you are more of following the crystals than following a path where the crystals are absent.
+After a while the crystals are few and far between, but you can always manage to see the next one in the distance.
+In the dark patches you find yourself going on your hands and knees to feel for safe places to step.
+The terrain has become rough enough you fear there may be holes you could fall into and get stuck in, or that could snag your   foot if you take a mistep and twist your ankle.
+__________________________________________________________________________________________
+
+After traveling in this fashion for quite some time, you can see a different type of light in the distance.
+The crystals glowed in bright blues and greens, but this light was yellow, red, and orange, and danced and flickered on the     cave walls.
+As you get closer you can see that the light is coming from two giant with a fire blazing atop each of them.
+Behind the pillars there's a massive door.
+That door must be the door to Hades.
+But between them on the ground there's a heep of... something.
+You squint your eyes to try to see it better.
+You can tell it's massive, and it's made up of coils of scaley flesh.
+As you got closer you notice the coils are expanding and contracing as if they're... breathing.
+Then you see its huge, closed eye.
+You had heard stories of giant snakes like this before and you knew the name well.
+After all, if someone fought one and survived they'd tell the epic tale to anyone who would listen for the rest of their        lives.
+This is not just any snake.
+This is a basilisk.
+Do you...
+question:
+choice: 1) Sneak past the basilisk.
+choice: 2) Try to kill the basilisk while it's still asleep.
+__________________________________________________________________________________________
+
+<choice 1>
+You try to go around the basilisk as quietly as you can, but the thing is wide enough that you can't get around it.
+You'll have to go over it.
+It's big enough that you can't step over its coils, so you try to jump over them. 
+That's probably less likely to wake it up than climbing over them. Right?
+You jump over the first coil.
+.
+.
+The snake doesn't move.
+You jump over the next coil.
+. 
+.
+The coils of the snake start to move in different directions.
+Soon the basilisk is coiled in a circle around you with its head raised in front of you. 
+__________________________________________________________________________________________
+
+</choice 1>
+<choice 2>
+You pull out your sword.
+The snakes eyes snap open!
+It moves quickly and before you can do anything it's coiled in a circle around you with its head raised in front of you.
+__________________________________________________________________________________________
+
+</choice 2>
+</cutscene5>
