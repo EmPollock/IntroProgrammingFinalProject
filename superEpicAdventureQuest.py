@@ -271,11 +271,38 @@ def readSaveFile(fileName):
                 inPlayerStats = False
             elif inPlayerStats == True:
                 if line[:4] == "atk:":
-                    playerStats["atk"] = int(line[5:])
+                    playerStats["atk"] = line[5:]
                 elif line[:4] == "def:":
-                    playerStats["def"] = int(line[5:])
+                    playerStats["def"] = line[5:]
                 elif line[:3] == "hp:":
-                    playerStats["hp"] = int(line[4:])
+                    playerStats["hp"] = line[4:]
+    if zone != "castle" and zone != "forest" and zone != "cave" and zone != "hades" and zone != "completed":
+        print("Something went wrong with your save file, please make a new one.")
+        exit()
+    for key in completedCutscenes:
+        if key[:8] != "cutscene":
+            print("Something went wrong with your save file, please make a new one.")
+            exit()
+        if completedCutscenes[key] != "complete" and completedCutscenes[key] != "incomplete":
+            print("Something went wrong with your save file, please make a new one.")
+            exit()
+    for key in completedEncounters:
+        if key[:9] != "encounter":
+            print("Something went wrong with your save file, please make a new one.")
+            exit()
+        if completedEncounters[key] != "complete" and completedEncounters[key] != "incomplete":
+            print("Something went wrong with your save file, please make a new one.")
+            exit()
+    for key in playerStats:
+        if key != "atk" and key != "def" and key != "hp":
+            print("Something went wrong with your save file, please make a new one.")
+            exit()
+        try:
+            playerStats[key] = int(playerStats[key])
+        except TypeError:
+            print("something went wrong with your save file, please make a new one.")
+            exit()
+
     return zone, completedCutscenes, completedEncounters, playerStats
 
 def saveProgress(fileName, zone, completedCutscenes, completedEncounters, playerStats, autoSave):
@@ -325,11 +352,11 @@ def readEncounter(fileName):
                 inStats = True
             elif inStats == True:
                 if line[:3] == "atk":
-                    enemyStats["atk"] = int(line[5:])
+                    enemyStats["atk"] = line[5:]
                 elif line[:3] == "def":
-                    enemyStats["def"] = int(line[5:])
+                    enemyStats["def"] = line[5:]
                 elif line[:2] == "hp":
-                    enemyStats["hp"] = int(line[4:])
+                    enemyStats["hp"] = line[4:]
                 elif line == "</stats>":
                     inStats = False
             elif line == "<dialog>":
@@ -375,6 +402,15 @@ def readEncounter(fileName):
                 inWin = False
             elif inWin == True:
                 enemyDialog["win"] = line
+    for key in enemyStats:
+        if key != "atk" and key != "def" and key != "hp":
+            print("Something went wrong with an encounter file, try redownloading the game.")
+            exit()
+        try:
+            enemyStats[key] = int(enemyStats[key])
+        except TypeError:
+            print("something went wrong with and encounter file, try redownloading the game.")
+            exit() 
     return enemyStats, enemyDialog
 
 def fight(fileName, playerStats):
@@ -532,6 +568,7 @@ def main():
     printTitleScreen()
     saveFile = printStartMenu()
     zone, completedCutscenes, completedEncounters, playerStats = readSaveFile(saveFile)
+
     if zone == "castle":
         if completedCutscenes["cutscene1"] == "incomplete":
             readDialog("dialogs/cutscene1Castle.txt")
